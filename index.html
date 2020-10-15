@@ -39,16 +39,20 @@
         </div>
     </header>
 
-    
+    <!-- Week 3 Workshop -->
+
     <div id="reserveModal" class="modal fade" role="dialog" aria-labelledby="Reserve a campsite">
         <div class="modal-dialog modal-lg" role="dialog">
-            <div class="modal-content">
-                <div class="modal-header text-white bg-info">
+            <div class="modal-content bg-info">
+                <div class="modal-header text-white">
+                    <!--Putting bg-info in the modal header caused there to be a 1px white line around the header that 
+                        I couldnt figure out how to get rid of. The best solution I could come up with was putting bg-info 
+                        in modal-content then adding text-black and bg-white to the modal body. -->
                     <h3 class="modal-title">Reserve a campsite</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
-                    <div class="card-body">
+                <div class="modal-body text-black bg-white">
+                    <div class="container-fluid">
                         <form id="reserveForm">
                             <div class="row">
                                 <div class="col-sm col-form-label">
@@ -230,14 +234,14 @@
             </div>
         </div>
 
-        <div class="row row-content">
+        <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3">
                 <h2>Featured Campsites</h2>
             </div>
             <div class="col">
                 <div class="media">
                     <img class="d-flex ml-3 img-thumbnail align-self-center order-1" src="img/react-lake-thumb.jpg" alt="React Lake Thumbnail">
-                    <div class="media-body">
+                    <div class="media-body align-self-center">
                         <h3>React Lake Campground</h3>
                         <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the 
                         shores of the pristine React Lake is a favorite for fly fishers.</p>
@@ -246,7 +250,7 @@
             </div>
         </div>
 
-        <div class="row row-content">
+        <div class="row row-content align-items-center">
             <div class="col-sm-4 order-sm-last col-md-3">
                 <h2 class="text-sm-right">Our Community Partners</h2>
             </div>
