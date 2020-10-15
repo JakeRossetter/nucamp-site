@@ -20,7 +20,6 @@
 </head>
 
 <body>
-
     <!-- jumbotron is a BS component that highlights a piece of html-->
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -34,15 +33,74 @@
                     <h2>A Better Way to Camp</h2>
                 </div>
                 <div class="col-sm col-md-4 col-xl-2">
-                    <!-- tooltip -->
-                    <!-- data-html makes html inside the tooltip work, instead of showing as text -->
-                    <a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-html="true" 
-                    data-placement="bottom" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a> 
+                    <button type="button" class="btn btn-info btn-lg center-block" data-toggle="modal" data-target="#reserveModal">Reserve a Campsite</button>
                 </div>
             </div>
         </div>
     </header>
 
+    
+    <div id="reserveModal" class="modal fade" role="dialog" aria-labelledby="Reserve a campsite">
+        <div class="modal-dialog modal-lg" role="dialog">
+            <div class="modal-content">
+                <div class="modal-header text-white bg-info">
+                    <h3 class="modal-title">Reserve a campsite</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <form id="reserveForm">
+                            <div class="row">
+                                <div class="col-sm col-form-label">
+                                    <label>Number of Campers</label>
+                                </div>
+                                <div class="col-sm">
+                                    <select name="numCampers" id="numCampers" class="form-control form-group">
+                                        <option>Select...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-form-label">
+                                    <label >Date</label>
+                                </div>
+                                <div class="col-sm">
+                                    <input class="form-control form-group" id="date" name="date" type="date" placeholder="MM/DD/YYYY" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-form-label">
+                                    <label>Campsite Type</label>
+                                </div>
+                                <div class="col-2 btn-group btn-group-toggle col-form-label" data-toggle="buttons">
+                                    <label class="btn btn-success">
+                                        <input name="siteType" id="siteTent" value="tent" type="checkbox" checked autocomplete="off"> Tent
+                                    </label>
+                                    <label class="btn btn-primary col-form-label">
+                                        <input name="siteType" id="siteRV" value="RV" type="checkbox" checked autocomplete="off"> RV
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col ">
+                                    <button class="btn btn-secondary" type="submit" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
     <!-- navbar-expand-sm creates horizontal navbar for SM and bigger viewports-->
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
@@ -75,7 +133,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title">Login</h3>
-                    <button type="button" clas="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
@@ -204,49 +262,6 @@
             </div>
         </div>
 
-        <!-- Reservation Form -->
-
-        <div class="row row-content">
-            <div class="col col-sm-6 mx-auto">
-                <div class="card">
-                    <h3 class="card-header text-white bg-info">Reserve a campsite</h3>
-                    <div class="card-body">
-                        <form id="reserveForm">
-                            <div class="row">
-                                <div class="col-sm col-form-label">
-                                    <label>Number of Campers</label>
-                                </div>
-                                <div class="col-sm">
-                                    <select name="numCampers" id="numCampers" class="form-control form-group">
-                                        <option>Select...</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6 col-form-label">
-                                    <label >Date</label>
-                                </div>
-                                <div class="col-sm">
-                                    <input class="form-control form-group" id="date" name="date" type="date" placeholder="MM/DD/YYYY" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col ">
-                                    <button class="btn btn-primary" type="submit">Search</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer Links -->
 
@@ -285,12 +300,7 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- tooltips are opt-in features, and wont work unless initialized by including the code below -->
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
+
 
     
 
